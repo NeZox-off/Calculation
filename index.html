@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="wrapper-modal">
+        <div id="overlay"></div>
+        <div id="modal-window">
+            <h2>Choose your car configuration:</h2>
+            <p>Color:</p>
+            <div class="color-config-wrapper">
+                <div class="color-config-wrapper-left">
+                    <img class="car active" src="images/car-blue.png" alt="" data-color="blue">
+                    <img class="car" src="images/car-brown.png" alt="" data-color="brown">
+                    <img class="car" src="images/car-orange.png" alt="" data-color="orange">
+                    <img class="car" src="images/car-pink.png" alt="" data-color="pink">
+                    <img class="car" src="images/car-red.png" alt="" data-color="red">
+                </div>
+                <div class="color-config-wrapper-right color-dots">
+                    <div class="dot blue active" onclick="activeColor('blue')">
+                        <span class="content">Blue</span>
+                    </div>
+                    <div class="dot brown" onclick="activeColor('brown')">
+                        <span class="content">Brown</span>
+                    </div>
+                    <div class="dot orange" onclick="activeColor('orange')">
+                        <span class="content">Orange</span>
+                    </div>
+                    <div class="dot pink" onclick="activeColor('pink')">
+                        <span class="content">Pink</span>
+                    </div>
+                    <div class="dot red" onclick="activeColor('red')">
+                        <span class="content">Red</span>
+                    </div>
+                </div>
+            </div>
+            <p>Engine:</p>
+            <select name="engine" id="engine">
+                <option value="0">1.6</option>
+                <option value="20000">2.0</option>
+                <option value="40000">2.4</option>
+            </select>
+            <p>Complectation:</p>
+            <select name="complectation" id="complectation">
+                <option value="0">Basic</option>
+                <option value="15000">Medium</option>
+                <option value="30000">Extended</option>
+            </select>
+            <p class="">The cost of the car without amount: <span id="priceOfAuto"></span> $</p>
+            <p class="">Additional amount: <span id="additionalAmount"></span> $</p>
+            <div class="buttons-wrapper">
+                <button id="saveConfiguration">SAVE</button>
+                <button id="cancelConfiguration">CANCEL</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-wrapper">
+        <div class="calculator-content">
+            <div class="calculator-content-title">
+                <h1>Calculate car loan</h1>
+            </div>
+            <div class="calculator-content-body">
+                <div class="calculator-content-body-left">
+                    <div class="calculator-content-body-left-inputs">
+                        <div class="input-wrapper">
+                            <button id="open-configure">
+                                <div class="text">Select car modification</div>
+                            </button>
+                        </div>
+                        <div class="input-wrapper">
+                            <div class="title">An initial fee</div>
+                            <div class="input">
+                                <input type="number" id="an-initial-fee" value="0" class="input-text">
+                            </div>
+                            <div class="input">
+                                <input type="range" min="100000" max="10000000" id="an-initial-fee-range" value="0" class="input-range">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <div class="title">Credit term</div>
+                            <div class="input">
+                                <input type="number" id="credit-term" value="0" class="input-text">
+                            </div>
+                            <div class="input">
+                                <input type="range" min="1" max="20" id="credit-term-range" value="0" class="input-range">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-content-body-right">
+                    <div class="final-results-wrapper">
+                        <div class="final-result-item">
+                            <div class="title">Amount of credit</div>
+                            <div class="value"><span id="amount-of-credit">0</span> $</div>
+                        </div>
+                        <div class="final-result-item">
+                            <div class="title">Monthly payment</div>
+                            <div class="value"><span id="monthly-payment">0</span> $</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   <script src="main.js"></script> 
+</body>
+</html>
